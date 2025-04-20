@@ -70,7 +70,7 @@ func main() {
 		gologger.Fatal().Msg("Error loading config: " + err.Error())
 	}
 
-	url := "https://behkad.tvu.ac.ir/login.php"
+	url := "https://behkad.nus.ac.ir/login.php"
 
 	// at least 10 reports required
 	if len(config.Gozareshat) < 10 {

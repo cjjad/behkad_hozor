@@ -8,8 +8,9 @@
     "codeMelli": "کد ملی",
     "codeCollege": "کد دانشجویی",
     "address": "آدرس محل کارآموزی",
-    "latitude":  0,
-    "longitude": 0
+    "latitude": 0,
+    "longitude": 0,
+    "behkadLoginUrl": "https://behkad.tvu.ac.ir/login.php"
   },
   "gozareshat": [
     "گزارش 1",
@@ -23,7 +24,7 @@
     "گزارش 9",
     "گزارش 10"
   ],
-  "lastIndex": 0,
+  "lastIndex": 1,
   "maxTimeoutCounts": 2,
   "timeoutErrorsCounts": 0
 }

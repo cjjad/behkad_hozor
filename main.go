@@ -23,11 +23,12 @@ type TelegramConfig struct {
 }
 
 type BehkadConfig struct {
-	CodeMelli   string  `json:"codeMelli"`
-	CodeCollege string  `json:"codeCollege"`
-	Address     string  `json:"address"`
-	Latitude    float64 `json:"latitude"`
-	Longitude   float64 `json:"longitude"`
+	CodeMelli      string  `json:"codeMelli"`
+	CodeCollege    string  `json:"codeCollege"`
+	Address        string  `json:"address"`
+	Latitude       float64 `json:"latitude"`
+	Longitude      float64 `json:"longitude"`
+	BehkadLoginUrl string  `json:"behkadLoginUrl"`
 }
 
 type Config struct {
@@ -70,8 +71,6 @@ func main() {
 		gologger.Fatal().Msg("Error loading config: " + err.Error())
 	}
 
-	url := "https://behkad.nus.ac.ir/login.php"
-
 	// at least 10 reports required
 	if len(config.Gozareshat) < 10 {
 		gologger.Fatal().Msg("Please write at least 10 gozaresh !")
@@ -91,7 +90,7 @@ func main() {
 	}
 
 	browser, page := OpenBrowser()
-	page = Brows(url, browser, page)
+	page = Brows(config.Behkad.BehkadLoginUrl, browser, page)
 
 	proto.BrowserGrantPermissions{
 		Permissions: []proto.BrowserPermissionType{
